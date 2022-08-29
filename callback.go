@@ -1,5 +1,3 @@
-// Save this file in ./web/app/callback/callback.go
-
 package main
 
 import (
