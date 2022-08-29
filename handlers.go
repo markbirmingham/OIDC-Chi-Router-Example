@@ -73,7 +73,7 @@ func Logout(w http.ResponseWriter, r *http.Request) {
 
 	parameters := url.Values{}
 	parameters.Add("redirect_uri", returnTo.String())
-	parameters.Add("client_id", os.Getenv("AUTH0_CLIENT_ID"))
+	parameters.Add("client_id", os.Getenv("OIDC_CLIENT_ID"))
 	logoutUrl.RawQuery = parameters.Encode()
 
 	http.Redirect(w, r, logoutUrl.String(), http.StatusTemporaryRedirect)
