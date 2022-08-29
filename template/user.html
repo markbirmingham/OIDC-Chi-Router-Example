@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <script src="public/js/user.js"></script>
+    <script src="public/js/js.cookie.js"></script>
+  </head>
+  <body>
+    <div>
+      <h2>Welcome {{.given_name}}</h2>
+      <p>Your email address is {{.email}}</p>
+      <p>Your username is {{.preferred_username}}</p>
+      <p>Your session ID is {{.session_state}}</p>
+      <a onclick="return logout()" href="/logout">Log Out</a>
+    </div>
+  </body>
+</html>
