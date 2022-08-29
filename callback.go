@@ -2,11 +2,9 @@ package main
 
 import (
 	"net/http"
-
-	"github.com/gorilla/sessions"
 )
 
-func Callback(store *sessions.CookieStore, auth *Authenticator) http.HandlerFunc {
+func Callback(auth *Authenticator) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 
 		session, err := store.Get(r, "auth-session")

@@ -52,8 +52,8 @@ func main() {
 		tmpl.Execute(w, nil)
 	})
 
-	r.Get("/login", Login(store, auth))
-	r.Get("/callback", Callback(store, auth))
+	r.Get("/login", Login(auth))
+	r.Get("/callback", Callback(auth))
 	r.Get("/user", isAuthenticated(User))
 	r.Get("/protected", isAuthenticated(Protected))
 	r.Get("/logout", Logout)

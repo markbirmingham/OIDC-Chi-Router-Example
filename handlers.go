@@ -8,11 +8,9 @@ import (
 	"os"
 
 	"net/http"
-
-	"github.com/gorilla/sessions"
 )
 
-func Login(store *sessions.CookieStore, auth *Authenticator) http.HandlerFunc {
+func Login(auth *Authenticator) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		state, err := generateRandomState()
 		if err != nil {
